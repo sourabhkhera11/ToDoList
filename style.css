@@ -43,3 +43,6 @@ svg{
     flex-direction: column;
     gap: 20px;
 }
+.invisible{
+    display: none;
+}
