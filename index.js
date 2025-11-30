@@ -16,17 +16,29 @@ function addElement(event){
         const list=document.getElementById('TaskList');
         list.appendChild(clone);
         input.value="";
+        console.log(ar);
     }
 }
 
 const TaskList =document.getElementById("TaskList");
 TaskList.addEventListener("click", (e) => {
-    // check if click was on an svg or inside it
     const svg = e.target.closest("svg");
-    if (!svg) return;   // click not on svg
+    if (!svg) return;   
     const element = svg.closest(".element");
-    console.log(element.id);
-    const task=document.getElementById(element.id);
+    const eleid=element.id;
+    const task=document.getElementById(eleid);
+    if(eleid!="-1"){
+        ar.splice(eleid,1);
+        console.log(eleid);
+        // Re-assign IDs to remaining tasks
+        const tasks = TaskList.querySelectorAll(".element");
+        tasks.forEach((task, index) => {
+            if(task.id!="-1"){
+                task.id = index;
+            }
+        });
+    }
+    console.log(ar);
     TaskList.removeChild(task);
 });
 
