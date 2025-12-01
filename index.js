@@ -1,4 +1,3 @@
-
 let ar=[];
 function addElement(event){
     const input=document.getElementById('input');
@@ -27,17 +26,6 @@ TaskList.addEventListener("click", (e) => {
     const element = svg.closest(".element");
     const eleid=element.id;
     const task=document.getElementById(eleid);
-    if(eleid!="-1"){
-        ar.splice(eleid,1);
-        console.log(eleid);
-        // Re-assign IDs to remaining tasks
-        const tasks = TaskList.querySelectorAll(".element");
-        tasks.forEach((task, index) => {
-            if(task.id!="-1"){
-                task.id = index;
-            }
-        });
-    }
     console.log(ar);
     TaskList.removeChild(task);
 });
