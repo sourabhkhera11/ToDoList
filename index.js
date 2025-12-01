@@ -19,16 +19,14 @@ function addElement(event){
     }
 }
 
-const TaskList =document.getElementById("TaskList");
-TaskList.addEventListener("click", (e) => {
-    const svg = e.target.closest("svg");
-    if (!svg) return;   
-    const element = svg.closest(".element");
-    const eleid=element.id;
+function deleteElement(event){
+    const TaskList =document.getElementById("TaskList");
+    const ele=event.target.closest(".element");
+    const eleid=ele.id;
     const task=document.getElementById(eleid);
     console.log(ar);
     TaskList.removeChild(task);
-});
+}
 
 
 
@@ -42,6 +40,30 @@ TaskList.addEventListener("click", (e) => {
 
 
 
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+// const TaskList =document.getElementById("TaskList");
+// TaskList.addEventListener("click", (e) => {
+//     const svg = e.target.closest("svg");
+//     if (!svg) return;   
+//     const element = svg.closest(".element");
+//     const eleid=element.id;
+//     const task=document.getElementById(eleid);
+//     console.log(ar);
+//     TaskList.removeChild(task);
+// });
 
 
 
